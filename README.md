@@ -1,2 +1,2 @@
-# workshop-resources
-Resources for workshops 
+# LSC - Workshop Guides and Resources
+Resources for workshops
