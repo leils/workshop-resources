@@ -8,3 +8,7 @@ Adafruit Qt Py, accelerometer, and Neopixel LEDs. We'll explore
 hardware in an accessible and approachable way, using these boards
 to build out a basic interactive piece that participants can use to
 visualize their movement.
+
+## Hardware 
+
+## Guide
