@@ -1,5 +1,4 @@
 import board
-import neopixel
 import adafruit_lis3dh
 import time
 
@@ -7,11 +6,6 @@ from adafruit_ht16k33.matrix import Matrix8x8x2
 
 i2c = board.STEMMA_I2C()
 matrix = Matrix8x8x2(i2c)
-
-
-pixels = neopixel.NeoPixel(board.NEOPIXEL, 1)
-
-i2c = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
 lis3dh = adafruit_lis3dh.LIS3DH_I2C(i2c)
 
 matrix[0,0] = matrix.LED_GREEN
@@ -26,9 +20,15 @@ while True:
     x, y, z = (value / adafruit_lis3dh.STANDARD_GRAVITY for value in lis3dh.acceleration)
     print(f"x = {x:.3f} G, y = {y:.3f} G, z = {z:.3f} G")
     # Small delay to keep things responsive but give time for interrupt processing.
-    red = max(0, int(255*(x/2)))
-    green = max(0, int(255*(y/2)))
-    blue = max(0, int(255*(z/2)))
-    pixels.fill((red, green, blue))
+
+    if (x > .4):
+        matrix.shift(1, 0, True)
+    elif (x < -.4):
+        matrix.shift(-1, 0, True)
+
+    if (y > .4):
+        matrix.shift(0, 1, True)
+    elif (y < -.4):
+        matrix.shift(0, -1, True)
 
     time.sleep(0.1)
