@@ -8,4 +8,4 @@ matrix = Matrix8x8x2(i2c)
 
 matrix[0,0] = matrix.LED_GREEN
 matrix[7,7] = matrix.LED_RED
-# matrix.fill(matrix.LED_GREEN)
+# matrix.fill(matrix.LED_YELLOW)

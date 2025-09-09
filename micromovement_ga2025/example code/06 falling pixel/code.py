@@ -19,16 +19,15 @@ while True:
     # z axis values.  Divide them by 9.806 to convert to Gs.
     x, y, z = (value / adafruit_lis3dh.STANDARD_GRAVITY for value in lis3dh.acceleration)
     print(f"x = {x:.3f} G, y = {y:.3f} G, z = {z:.3f} G")
-    # Small delay to keep things responsive but give time for interrupt processing.
 
     if (x > .4):
-        matrix.shift(1, 0, True)
+        matrix.shift(0, 1, True)
     elif (x < -.4):
-        matrix.shift(-1, 0, True)
+        matrix.shift(0, -1, True)
 
     if (y > .4):
-        matrix.shift(0, 1, True)
+        matrix.shift(1, 0, True)
     elif (y < -.4):
-        matrix.shift(0, -1, True)
+        matrix.shift(-1, 0, True)
 
     time.sleep(0.1)

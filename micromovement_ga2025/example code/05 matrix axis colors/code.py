@@ -8,8 +8,6 @@ i2c = board.STEMMA_I2C()
 matrix = Matrix8x8x2(i2c)
 lis3dh = adafruit_lis3dh.LIS3DH_I2C(i2c)
 
-matrix[0,0] = matrix.LED_GREEN
-
 # Set range of accelerometer (can be RANGE_2_G, RANGE_4_G, RANGE_8_G or RANGE_16_G).
 lis3dh.range = adafruit_lis3dh.RANGE_2_G
 
@@ -19,15 +17,15 @@ while True:
     x, y, z = (value / adafruit_lis3dh.STANDARD_GRAVITY for value in lis3dh.acceleration)
     print(f"x = {x:.3f} G, y = {y:.3f} G, z = {z:.3f} G")
     
-    absValues = [abs(x), abs(y), abs(z)]
+    absValues = [abs(x), abs(y), abs(z)] # Get the absolute force value
     maxValue = max(absValues)
-    maxIndex = absValues.index(maxValue)
+    maxIndex = absValues.index(maxValue) # Figure out which Axis felt the most force
     
-    if (maxIndex == 0):
-            matrix.fill(matrix.LED_GREEN)
-    elif (maxIndex == 1):
+    if (maxIndex == 0): # If the most force is felt on the X axis
+            matrix.fill(matrix.LED_GREEN) 
+    elif (maxIndex == 1): # If the most force is felt on the Y axis 
             matrix.fill(matrix.LED_YELLOW)
-    elif (maxIndex == 2):
+    elif (maxIndex == 2): # If the most force is felt on the Z axis
             matrix.fill(matrix.LED_RED)
     
     time.sleep(0.1)
