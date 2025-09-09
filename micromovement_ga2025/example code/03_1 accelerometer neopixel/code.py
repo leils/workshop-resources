@@ -18,6 +18,7 @@ while True:
     x, y, z = (value / adafruit_lis3dh.STANDARD_GRAVITY for value in lis3dh.acceleration)
     print(f"x = {x:.3f} G, y = {y:.3f} G, z = {z:.3f} G")
 
+    # TODO is this the most efficient thing to do?
     red = max(0, int(255*(x/2)))
     green = max(0, int(255*(y/2)))
     blue = max(0, int(255*(z/2)))
