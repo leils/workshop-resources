@@ -9,7 +9,7 @@ hardware in an accessible and approachable way, using these boards
 to build out a basic interactive piece that participants can use to
 visualize their movement.
 
-Example code in this folder includes all libraries required to run. This sample code runs on CircuitPython 9.2.8
+Example code in this folder includes all libraries required to run. This sample code runs on [CircuitPython 9.2.8](https://circuitpython.org).
 
 ## Hardware Required
 

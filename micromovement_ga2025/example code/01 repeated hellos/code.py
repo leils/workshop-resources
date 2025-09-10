@@ -1,5 +1,7 @@
-import time
+import time 
 
-while True:
-    print("Hello!")
-    time.sleep(0.1)
+while True: 
+    print("Hello")
+    time.sleep(1)
+
+print("I never print!")

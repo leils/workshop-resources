@@ -12,9 +12,13 @@ lis3dh = adafruit_lis3dh.LIS3DH_I2C(i2c)
 lis3dh.range = adafruit_lis3dh.RANGE_2_G
 
 while True:
-    x, y, z = (value / adafruit_lis3dh.STANDARD_GRAVITY for value in lis3dh.acceleration)
-
     # Put your code here!
+    x, y, z = (value / adafruit_lis3dh.STANDARD_GRAVITY for value in lis3dh.acceleration)
+    
+    if (x > .9): 
+        matrix.fill(matrix.LED_GREEN)
+    else:
+        matrix.fill(matrix.LED_OFF)
 
     
     time.sleep(0.1)
