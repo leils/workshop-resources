@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<style>
+:root{
+--logo: ;
+--logo-size: ;
+--text-scale-intensity: ;
+--darkaccent1color: #FFC400;
+--lightaccent1color: #FFC400;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #ffca00;
+--darktitletextcolor: #000;
+--lightbodytextcolor: #FFF;
+--darkbodytextcolor: #000;
+--lightbackgroundcolor: #ffffff;
+--darkbackgroundcolor: #000000;
+--bodyfont: ibm plex sans;
+--titlefont: ibm plex mono;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/newyork.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+</head>
+<body class="responsive ">
+<div class="reveal">
+<div class="slides">
+<section class="variable-size-headings has-footer light cover-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="hardwareweek1:introtoon-boardio">Hardware Week 1: Intro to On-Board IO</h1>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light grid-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 has-only-media media-grid"> 
+ <div class="element-group has-media has-media-first has-media-last">
+  <div class="layout-grid media-grid grid-items-4">
+   <figure class="">
+    <img src="media/Clipboard 6.png" class=" position-center-center" />
+   </figure>
+   <figure class="">
+    <img src="media/Clipboard 7.png" class=" position-center-center" />
+   </figure>
+   <figure class="">
+    <img src="media/Clipboard 9.png" class=" position-center-center" />
+   </figure>
+   <figure class="">
+    <img src="media/Clipboard 11.png" class=" position-center-center" />
+   </figure>
+  </div>   
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light v-split-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group has-media has-media-first has-media-last">
+  <div class="html-videoWrapper">
+   <video controls class=" size-contain position-center-center">
+    <source src="iapresenter:///Users/leia/Library/Containers/net.ia.presenter/Data/Library/Application Support/PRESENTER_TEMP/E92E49E1-DD70-4408-BD10-BE662EAC6DFF-573-00001A6C8BD5EC97/assets/IMG_7935.MOV" />
+   </video>
+  </div>
+ </div> 
+ <div class="element-group has-media has-media-first has-media-last">
+  <div class="html-videoWrapper">
+   <video controls class=" size-contain position-center-center">
+    <source src="iapresenter:///Users/leia/Library/Containers/net.ia.presenter/Data/Library/Application Support/PRESENTER_TEMP/E92E49E1-DD70-4408-BD10-BE662EAC6DFF-573-00001A6C8BD5EC97/assets/IMG_9934.MOV" />
+   </video>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <h2 id="classoverview">Class Overview</h2> 
+  <ul> 
+   <li>intro to microcontrollers</li> 
+   <li>talking to your board</li> 
+   <li>inputs and outputs</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footnotes has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <h2 id="groundrules">Ground Rules</h2> 
+  <ul> 
+   <li><mark>DO NOT PUT THESE ON METAL</mark><sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></li> 
+   <li>Don't force a plug into a socket</li> 
+   <li>Don't struggle alone</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"> 
+ <ol> 
+  <li id="fn1"> <p>Static electricity is the circuit's worst enemy <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p> </li> 
+ </ol> 
+</div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light title-and-columns-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-title-and-columns slide-contents columns-items-2 media-grid"> 
+ <div class="title-part element-group">
+  <h2 id="whatsamicrocontroller">What's a microcontroller?</h2>
+ </div> 
+ <div class="column-part element-group">
+  <p>Microcontrollers are sometimes called <mark>circuit boards</mark> or just <mark>boards</mark>.</p>
+ </div>
+ <div class="column-part element-group has-media has-media-first has-media-last">
+  <div class="layout-grid media-grid grid-items-2">
+   <figure class="">
+    <img src="media/Screenshot 2026-03-18 at 2.53.13 PM.png" class=" size-contain position-center-center" />
+   </figure>
+   <figure class="">
+    <img src="media/Clipboard 1.png" class=" size-contain position-center-center" />
+   </figure>
+  </div> 
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <h1 id="thecircuitplaygroundexpress">The Circuit Playground Express</h1> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Clipboard.png" class=" position-center-center" />
+   </figure>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light v-split-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard.png" class=" position-center-center" />
+ </figure> 
+ <div class="element-group">
+  <ul> 
+   <li>learning platform with all the bells &amp; whistles</li> 
+   <li>ATSAMD21 ARM Cortex M0 Processor</li> 
+   <li>literally so much on this thing</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 17.png" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 18.png" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 19.png" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>So what's on your board?</p> 
+  <ul> 
+   <li>10 x mini NeoPixels, each one can display any color</li> 
+   <li>1 x Motion sensor (LIS3DH triple-axis accelerometer with tap detection, free-fall detection)</li> 
+   <li>1 x Temperature sensor (thermistor)</li> 
+   <li>1 x Light sensor (phototransistor). Can also act as a color sensor and pulse sensor.</li> 
+   <li>1 x Sound sensor (MEMS microphone)</li> 
+   <li>1 x Mini speaker with class D amplifier (7.5mm magnetic speaker/buzzer)</li> 
+   <li>2 x Push buttons, labeled A and B</li> 
+   <li>1 x Slide switch</li> 
+   <li>Infrared receiver and transmitter - can receive and transmit any remote control codes, as well as send messages between Circuit Playground Expresses. Can also act as a proximity sensor.</li> 
+   <li>8 x alligator-clip friendly input/output pins</li> 
+   <li>Includes I2C, UART, 8 pins that can do analog inputs, multiple PWM output</li> 
+   <li>7 pads can act as capacitive touch inputs and the 1 remaining is a true analog output</li> 
+   <li>Green "ON" LED so you know its powered</li> 
+   <li>Red "#13" LED for basic blinking</li> 
+   <li>Reset button</li> 
+   <li>ATSAMD21 ARM Cortex M0 Processor, running at 3.3V and 48MHz</li> 
+   <li>2 MB of SPI Flash storage, used primarily with CircuitPython to store code and libraries.</li> 
+   <li>MicroUSB port for programming and debugging</li> 
+   <li>USB port can act like serial port, keyboard, mouse, joystick or MIDI!</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light cover-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="sohowdowetalktothesethings">So how do we talk to these things?</h1>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 2.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light grid-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <p>How does CircuitPython work?</p> 
+  <div class="layout-grid media-grid grid-items-2">
+   <figure class="">
+    <img src="media/Screenshot 2026-04-02 at 9.01.20 PM.png" class=" size-contain position-center-center" />
+   </figure>
+   <figure class="">
+    <img src="media/Screenshot 2026-04-02 at 9.01.41 PM.png" class=" size-contain position-center-center" />
+   </figure>
+  </div> 
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footnotes has-footer light v-split-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 15.png" class=" position-center-center" />
+ </figure> 
+ <div class="element-group">
+  <h1 id="downloadopenmuifyouwanttoworkadifferentwaywithyourcodeyoucanchecktheclassresourcesformoreinfo.alsoyeahthisisbeingsunsetted...butitsstillthebestlearningplatformforcircuitpythonatthemoment">Download &amp; Open MU<sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup><sup><a href="#fn2" id="fnr2" title="see footnote" class="footnote">2</a></sup></h1> 
+  <p>https://codewith.mu/ </p>
+ </div> 
+</div> 
+<div class="footnotes"> 
+ <ol> 
+  <li id="fn1"> <p>If you want to work a different way with your code, you can! Check the class resources for more info. <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p> </li> 
+  <li id="fn2"> <p>Also, yeah this is being sunsetted ... but it's still the best learning platform for CircuitPython at the moment <a href="#fnr2" title="return to article" class="reversefootnote">↩︎</a></p> </li> 
+ </ol> 
+</div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Ground Rules:</p> 
+  <ul> 
+   <li>your code lives on your microcontroller</li> 
+   <li>code lives in code.py</li> 
+   <li>runs when you save</li> 
+   <li>formatting matters</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>print('Hello, World')
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Find a partner, and get your board to say hello to them.</p> 
+  <pre><code>print('Hello, World')
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Now let's add some structure to it. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>import time 
+
+while True: 
+    print("hello")
+    time.sleep(1)
+
+print("I never print")
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 16.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Okay, let's control some hardware.</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>import board
+import digitalio
+import time
+
+led = digitalio.DigitalInOut(board.LED)
+led.direction = digitalio.Direction.OUTPUT
+
+while True:
+    led.value = True
+    time.sleep(0.1)
+    led.value = False
+    time.sleep(0.5)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light cover-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="onboardio">Onboard I/O</h1> 
+  <h4 id="inputoutput">Input &amp; output</h4>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light title-and-columns-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-title-and-columns slide-contents columns-items-2 "> 
+ <div class="title-part element-group">
+  <h1 id="outputandinput">Output and Input</h1>
+ </div> 
+ <div class="column-part element-group">
+  <p><strong>Output can be:</strong></p> 
+  <ul> 
+   <li>Lights</li> 
+   <li>Speakers</li> 
+   <li>Motors</li> 
+  </ul>
+ </div>
+ <div class="column-part element-group">
+  <p><strong>Input can be:</strong></p> 
+  <ul> 
+   <li>Buttons</li> 
+   <li>Sensors</li> 
+   <li>Microphones</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>That was output. Let's do some input.</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 3.png" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>import time
+import board
+import digitalio
+
+led = digitalio.DigitalInOut(board.D13)
+led.switch_to_output()
+
+button = digitalio.DigitalInOut(board.BUTTON_A)
+button.switch_to_input(pull=digitalio.Pull.DOWN)
+
+while True:
+    if button.value:  # button is pushed
+        led.value = True
+    else:
+        led.value = False
+
+    time.sleep(0.01)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Some exercises to try ... </p> 
+  <ul> 
+   <li>Try using the second button. Can you make the LED only light up when both buttons are pressed?</li> 
+   <li>Can you make a light that turns on if one button is pressed, and turns off if the other one is?</li> 
+   <li>Can you make the board say "hello" when a button is pressed?</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Did you make the board say hello? What happened? </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>import time
+import board
+import digitalio
+
+button = digitalio.DigitalInOut(board.BUTTON_A)
+button.switch_to_input(pull=digitalio.Pull.DOWN)
+
+while True:
+    print(button.value)
+    time.sleep(0.1)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Pair up with someone and see if you can solve that issue. </p> 
+  <p>(5 mins) </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>We have to do something <em>only when the button value changes</em>. </p> 
+  <pre><code>button = digitalio.DigitalInOut(board.BUTTON_A)
+button.switch_to_input(pull=digitalio.Pull.DOWN)
+
+lastValue = button.value
+
+while True:
+    if (button.value == True) and (lastValue == False):
+        print("Only prints once per button press")
+    lastValue = button.value
+    
+    time.sleep(0.1)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Exercises: </p> 
+  <ul> 
+   <li>Try to make your board count the number of button presses</li> 
+   <li>Make each button say a different thing in the console.</li> 
+   <li>Make one button turn on the light, and the other turn it off.</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light cover-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <hgroup>
+   <p class="kicker">We'll get to more output in a minute! But first ... </p> 
+   <h1 id="libraries">Libraries</h1>
+  </hgroup>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents media-grid"> 
+ <div class="element-group has-media has-media-first">
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Clipboard 20.png" class=" size-contain position-center-center" />
+   </figure>
+  </div> 
+  <p>To use external libraries, you need to copy the library files into the <code>CIRCUITPY/lib</code> folder. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light v-split-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group">
+  <h1 id="librariesinpractice:neopixels">Libraries in practice: Neopixels</h1>
+ </div> 
+ <figure class="">
+  <img src="media/Clipboard 12.png" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <div class="element-group has-media has-media-first has-media-last">
+  <div class="html-videoWrapper">
+   <video controls class=" position-center-center">
+    <source src="iapresenter:///Users/leia/Library/Containers/net.ia.presenter/Data/Library/Application Support/PRESENTER_TEMP/E92E49E1-DD70-4408-BD10-BE662EAC6DFF-573-00001A6C8BD5EC97/assets/cpe-neopixels.mp4" />
+   </video>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <p><a href="https://github.com/leils/workshop-resources/tree/main/cci_ga2026/neopixel/lib">Neopixel Libraries</a></p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Screenshot 2026-04-09 at 11.02.09 PM.png" class=" size-contain position-center-center" />
+   </figure>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>import time
+import board
+import neopixel
+
+pixels = neopixel.NeoPixel(board.NEOPIXEL, 10, brightness=0.1, auto_write=False)
+RED = (255, 0, 0)
+OFF = (0, 0, 0)
+
+while True:
+    pixels.fill(RED)
+    pixels.show()
+    time.sleep(1)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <h2 id="neopixelchallenges:">Neopixel Challenges:</h2> 
+  <ul> 
+   <li>Animate a pixel in a circle around the board</li> 
+   <li>Use a button press and your neopixels together</li> 
+   <li>Use your neopixels to count the number of button presses</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 14.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <h1 id="capacitivetouch">Capacitive Touch</h1> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Clipboard 4.png" class=" size-contain position-center-center" />
+   </figure>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Capacitive Touch Example</p> 
+  <pre><code>import time
+import board
+import touchio
+
+touch_A1 = touchio.TouchIn(board.A1)
+
+while True:
+    if touch_A1.value:
+        print("A1 touched!")
+
+    time.sleep(0.01)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>It's printing so much! </p> 
+  <p>Can you apply the same logic as the buttons earlier, to this? </p> 
+  <p>Rewrite this so it only prints once per touch. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>import time
+import board
+import touchio
+
+touch_A1 = touchio.TouchIn(board.A1)
+lastTouch = touch_A1.value
+
+
+while True:
+    if touch_A1.value and not lastTouch:
+        print("A1 touched!")
+    
+    lastTouch = touch_A1.value
+
+    time.sleep(0.01)
+</code></pre> 
+  <p>How would you change this so it prints "A1 released!" when you let go? </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light cover-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="yourproject:">Your Project:</h1> 
+  <p>Pick one of the libraries that we've already gone through, or a new one if you're feeling adventurous. </p> 
+  <p>Create a project that uses an input and an output on your CircuitPlayground in a new way! </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light v-split-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents"> 
+ <div class="element-group">
+  <p><strong>For example:</strong></p> 
+  <p>Neopixels + Buttons </p> 
+  <p>Capacitive Touch + Built-In LED </p> 
+  <p>Microphone + Serial Print</p>
+ </div> 
+ <div class="element-group">
+  <p><strong>Other libraries/examples to use</strong></p> 
+  <ul> 
+   <li><a href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-audio-out">Audio Out (Speaker)</a></li> 
+   <li><a href="https://learn.adafruit.com/adafruit-circuit-playground-express/playground-light-sensor">Light Sensor</a></li> 
+   <li><a href="https://learn.adafruit.com/adafruit-circuit-playground-express/playground-sound-meter">Sound Meter</a></li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container responsive" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Resources: </p> 
+  <ul> 
+   <li><a href="https://circuitpython.org/libraries">CircuitPlayground Library Bundle (use 9.x)</a></li> 
+   <li>Check out the <a href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-playground">Adafruit CircuitPython Examples</a></li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 1
+ </div>
+</div>
+</section>
+</div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/pptxgen.min.js"></script>
+<script src="engine/pfill.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>
