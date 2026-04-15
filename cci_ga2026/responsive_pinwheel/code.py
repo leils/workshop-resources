@@ -1,5 +1,5 @@
 # CPX Sound Responsive Pinwheel 
-# tested with CircuitPython 9.x
+# tested with CircuitPython 10.x
 import array
 import math
 import audiobusio

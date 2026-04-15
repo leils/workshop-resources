@@ -1,5 +1,5 @@
 # Circuit Playground NeoPixel
-# tested with CircuitPython 9.x 
+# tested with CircuitPython 10.x 
 
 # Neopixel Introduction
 import time
