@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<style>
+:root{
+--logo: ;
+--logo-size: ;
+--text-scale-intensity: ;
+--darkaccent1color: #FFC400;
+--lightaccent1color: #FFC400;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #FFC400;
+--darktitletextcolor: #000;
+--lightbodytextcolor: #FFF;
+--darkbodytextcolor: #000;
+--lightbackgroundcolor: #ffffff;
+--darkbackgroundcolor: #000000;
+--bodyfont: inter;
+--titlefont: inter;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/newyork.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+</head>
+<body class="responsive ">
+<div class="reveal">
+<div class="slides">
+<section class="variable-size-headings light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="hardwareweek1:introtoon-boardio">Hardware Week 1: Intro to On-Board IO</h1> 
+  <h3 id="day2-adeeperdive">Day 2 - a deeper dive</h3>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <h1 id="warm-upexercises:">Warm-up Exercises:</h1> 
+  <ul> 
+   <li>Make your board count button presses in the serial console (remember edge detection?)</li> 
+   <li>Print a poem line-by-line in the console.</li> 
+   <li>Use buttons to light up neopixels.</li> 
+   <li>Create an animation in the neopixels.</li> 
+   <li>Can you make a game?</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p><strong>Things you remember from last time?</strong></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Today's rough agenda: </p> 
+  <ul> 
+   <li>Microcontroller Time</li> 
+   <li>Animations &amp; Interactions</li> 
+   <li>Break</li> 
+   <li>Analog vs Digital</li> 
+   <li>Capacitive Touch</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p><strong>Quick reminders:</strong></p> 
+  <ul> 
+   <li>Don't put boards on metal</li> 
+   <li>Code lives on the board</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="timeresponsiveness">Time &amp; Responsiveness</h1> 
+  <p>Doing two things at once </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>If I ask you to make your board say "hello" every 5 seconds, how would you do it?</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>You might do it this way: </p> 
+  <pre><code>import time 
+
+while True:
+    print("hello")
+    time.sleep(5)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-footnotes light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Now, what if you wanted to add an interaction? </p> 
+  <p>Your board saying "hello" every 5 seconds, <strong>and</strong> a button that turns on the red LED? <sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></p>
+ </div> 
+</div> 
+<div class="footnotes"> 
+ <ol> 
+  <li id="fn1"> <p><a href="https://gist.github.com/leils/024ff7b0bf93306706af7a86b297fa55">Solution</a> <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p> </li> 
+ </ol> 
+</div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="microcontrollertime">Microcontroller Time</h1> 
+  <p>Time is a little funny on tiny computers. </p> 
+  <p><code>import time</code></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-footnotes light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents"> 
+ <div class="element-group">
+  <p><code>time.time()</code> - number of seconds since Jan 1, 1970</p>
+ </div> 
+ <div class="element-group">
+  <p>Use this to make your board say "hello" every 5 seconds, with a button that immediately turns on the red LED. <sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></p>
+ </div> 
+</div> 
+<div class="footnotes"> 
+ <ol> 
+  <li id="fn1"> <p><a href="https://gist.github.com/leils/024ff7b0bf93306706af7a86b297fa55">Solution</a> <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p> </li> 
+ </ol> 
+</div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p><code>time.time()</code> - number of seconds since Jan 1, 1970</p> 
+  <p><code>time.monotonic()</code> - an ever-increasing value per "tick" </p> 
+  <p><code>time.monotonic_ns()</code> - like the above, but in nanoseconds</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p><code>time.localtime()</code> theoretically should give you the current time locally ... </p> 
+  <p>but the reality is it doesn't work. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Exercise: Create a stopwatch using your board. </p> 
+  <p>Challenge: Have your board blink the number of seconds that elapse between button presses. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p><strong>So why is this important?</strong></p> 
+  <p>Try this: </p> 
+  <p>Make an animation that spins a pixel around in a circle on your board, <strong>without</strong> using <code>time.sleep</code>.</p> 
+  <p>Then, have that animation pause when you hit a button, and unpause when you hit it again. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="digitalanalog">Digital &amp; Analog</h1> 
+  <p>These refer to how we read/interact with the pins on our microcontroller. They tell us what kind of values to expect. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group">
+  <h3 id="thedigitalworld:onoff">The Digital World: On &amp; Off</h3> 
+  <p>Or: True &amp; False</p> 
+  <p>Or: 1 &amp; 0</p>
+ </div> 
+ <figure class="">
+  <img src="media/Screenshot 2026-04-15 at 11.57.38 PM.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>import time 
+import board
+import digitalio
+
+button = digitalio.DigitalInOut(board.BUTTON_A)
+button.switch_to_input(pull=digitalio.Pull.DOWN)
+
+while True:
+    print((int(button.value),0,0))
+    time.sleep(0.2)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard.png" class=" size-contain position-center-center" />
+ </figure> 
+ <figure class="">
+  <img src="media/Clipboard 3.png" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>"Digital" doesn't just refer to how we read from a button, it can also be how we write to it. </p> 
+  <p>It can be both <em>input</em> and <em>output</em>. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Remember our LED?</p> 
+  <pre><code>import time 
+import board
+import digitalio
+
+led = digitalio.DigitalInOut(board.LED)
+
+while True:
+    led.value = True
+    time.sleep(1)
+    led.value = False
+    time.sleep(1)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group">
+  <h3 id="theanalogworld:aspectrum">The Analog World: A Spectrum</h3>
+ </div> 
+ <figure class="">
+  <img src="media/Screenshot 2026-04-16 at 12.03.53 AM.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>import time 
+import board
+import analogio
+
+light_sensor = analogio.AnalogIn(board.LIGHT)
+
+while True:
+    time.sleep(0.2)
+
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light grid-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-0 has-only-media media-grid"> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings has-footnotes light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Exercise: Practice using analog input. Can you make the LED blink faster if there's more light? Slower? <sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></p>
+ </div> 
+</div> 
+<div class="footnotes"> 
+ <ol> 
+  <li id="fn1"> <p>If you get stuck, <a href="https://gist.github.com/leils/01f24f124b1c44e08d7846e448079443">here's a sample solution</a> <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p> </li> 
+ </ol> 
+</div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group">
+  <h1 id="capacitivetouch">Capacitive Touch</h1> 
+  <p>Capacitive sensing uses some of that analog reading </p>
+ </div> 
+ <figure class="">
+  <img src="media/Clipboard 4.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p><a href="https://github.com/leils/workshop-resources/raw/refs/heads/main/cci_ga2026/capacitive_touch/code.py">Capacitive Touch Example Code</a></p> 
+  <pre><code>import time
+import board
+import touchio
+
+touch_A1 = touchio.TouchIn(board.A1)
+
+while True:
+    print((int(touch_A1.value),0,0))
+
+    time.sleep(0.01)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Wait a second ... doesn't this look like digital?</p> 
+  <p>change <code>touch_A1.value</code> → <code>touch_A1.raw_value</code></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light full-image-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Screenshot 2026-04-16 at 12.46.04 AM.png" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>So you have both; the Capacitive Touch library <em>technically</em> reads in analog, but it gives you a nice "touched-or-not-touched" value too. </p> 
+  <p><code>touch_A1.raw_value</code> ← real readings</p> 
+  <p><code>touch_A1.value</code> ← treated like digital</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Exercise: Test out the Capacitive Touch inputs! </p> 
+  <ul> 
+   <li>Read more of the capacitive touch pads. Use them together!</li> 
+   <li>Can you use both the <code>value</code> and <code>raw_value</code> together?</li> 
+   <li>Challenge: Try putting edge detection into play here ... how would you do that with an analog value?</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Example code for later reference</p> 
+  <p><a href="https://gist.github.com/leils/49726876b234fff11c36330a8209e633">cap touch edge detection (regular value), two directions</a></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="yourproject:">Your Project:</h1> 
+  <p>Now that you know a bit about hardware, let's make something <em>interesting</em> with it. </p> 
+  <p>Use what we've learned to make a <strong>surprising</strong>, <strong>narrative</strong>, or <strong>poetic</strong> interaction. </p> 
+  <p>Use at least one input and one output.</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents"> 
+ <div class="element-group">
+  <p><strong>For example:</strong></p> 
+  <p>Neopixels + Buttons </p> 
+  <p>Capacitive Touch + Built-In LED </p> 
+  <p>Microphone + Serial Print</p>
+ </div> 
+ <div class="element-group">
+  <p><strong>Other libraries/examples to use</strong></p> 
+  <ul> 
+   <li><a href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-audio-out">Audio Out (Speaker)</a></li> 
+   <li><a href="https://learn.adafruit.com/adafruit-circuit-playground-express/playground-light-sensor">Light Sensor</a></li> 
+   <li><a href="https://learn.adafruit.com/adafruit-circuit-playground-express/playground-sound-meter">Sound Meter</a></li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light title-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-title slide-contents"> 
+ <div class="element-group">
+  <h2 id="wanttogoevenfurtherwiththis">Want to go even further with this?</h2> 
+  <p><a href="https://circuitpython.org/libraries">CircuitPlayground Library Bundle (use 10.x)</a> </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+</div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/pptxgen.min.js"></script>
+<script src="engine/pfill.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>
