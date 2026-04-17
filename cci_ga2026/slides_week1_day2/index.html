@@ -513,6 +513,60 @@ while True:
  <div class="trailing"></div>
 </div>
 </section>
+<section class="variable-size-headings light full-image-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/IMG_4388 Large.jpeg" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light full-image-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/IMG_4389 Large.jpeg" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light full-image-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 2.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
 <section class="variable-size-headings light default-container wide" style="">
 <div class="header">
  <div class="leading"></div>
@@ -521,15 +575,16 @@ while True:
 </div> 
 <div class="layout-default slide-contents"> 
  <div class="element-group">
-  <pre><code>import time 
+  <p><a href="https://gist.github.com/leils/28fdddace5df58af2ee11bb4a04eb163">Analog In Basic Example</a></p> 
+  <pre><code>import time
 import board
 import analogio
 
-light_sensor = analogio.AnalogIn(board.LIGHT)
+analogin = analogio.AnalogIn(board.A1)
 
 while True:
-    time.sleep(0.2)
-
+    print((analogin.value,0,0))
+    time.sleep(0.1)
 </code></pre>
  </div> 
 </div> 
@@ -540,13 +595,17 @@ while True:
  <div class="trailing"></div>
 </div>
 </section>
-<section class="variable-size-headings light grid-container wide" style="">
+<section class="variable-size-headings light default-container wide" style="">
 <div class="header">
  <div class="leading"></div>
  <div class="middle"></div>
  <div class="trailing"></div>
 </div> 
-<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-0 has-only-media media-grid"> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>We get lots of values!</p> 
+  <p>How can you use these values? What do you need to do to make these values useful?</p>
+ </div> 
 </div> 
 <div class="footnotes"></div> 
 <div class="footer">
@@ -555,7 +614,30 @@ while True:
  <div class="trailing"></div>
 </div>
 </section>
-<section class="variable-size-headings has-footnotes light default-container wide" style="">
+<section class="variable-size-headings light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <h1 id="potentiometers">Potentiometers</h1> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Clipboard 1.png" class=" size-contain position-center-center" />
+   </figure>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div>
+</section>
+<section class="variable-size-headings light default-container wide" style="">
 <div class="header">
  <div class="leading"></div>
  <div class="middle"></div>
@@ -563,14 +645,10 @@ while True:
 </div> 
 <div class="layout-default slide-contents"> 
  <div class="element-group">
-  <p>Exercise: Practice using analog input. Can you make the LED blink faster if there's more light? Slower? <sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></p>
+  <p><a href="https://gist.github.com/leils/a3d1b49a5d30c1fd6ecd94719a6e2732">Potentiometer with voltage helper</a></p>
  </div> 
 </div> 
-<div class="footnotes"> 
- <ol> 
-  <li id="fn1"> <p>If you get stuck, <a href="https://gist.github.com/leils/01f24f124b1c44e08d7846e448079443">here's a sample solution</a> <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p> </li> 
- </ol> 
-</div> 
+<div class="footnotes"></div> 
 <div class="footer">
  <div class="leading"></div>
  <div class="middle"></div>
