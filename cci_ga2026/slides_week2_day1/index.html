@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<style>
+:root{
+--logo: ;
+--logo-size: ;
+--text-scale-intensity: ;
+--darkaccent1color: #FFC400;
+--lightaccent1color: #FFC400;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #ffca00;
+--darktitletextcolor: #000;
+--lightbodytextcolor: #FFF;
+--darkbodytextcolor: #000;
+--lightbackgroundcolor: #ffffff;
+--darkbackgroundcolor: #000000;
+--bodyfont: ibm plex sans;
+--titlefont: ibm plex mono;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/newyork.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+</head>
+<body class="responsive ">
+<div class="reveal">
+<div class="slides">
+<section class="variable-size-headings has-footer light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="hardwareweek2:beyondtheboard">Hardware Week 2: Beyond the Board</h1> 
+  <p>Now that we understand the board a bit, let's start to extend it.</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Questions from last week? </p> 
+  <p>Highlights from Saturday? </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <h2 id="classoverview">Class Overview</h2> 
+  <ul> 
+   <li>Circuit basics - from the beginning</li> 
+   <li>Extending the board with your own buttons</li> 
+   <li>Working with Wires</li> 
+   <li>Arcade Buttons</li> 
+   <li>Making them "permanent"</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="circuits:littleloopsofelectricity">Circuits: little loops of electricity</h1>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light grid-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <p>Make your "simplest circuit"</p> 
+  <div class="layout-grid media-grid grid-items-2">
+   <figure class="">
+    <img src="media/Clipboard 6.png" class=" size-contain position-center-center" />
+   </figure>
+   <figure class="">
+    <img src="media/Clipboard 7.png" class=" position-center-center" />
+   </figure>
+  </div> 
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light grid-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <p>Make a slightly less simple circuit</p> 
+  <div class="layout-grid media-grid grid-items-3">
+   <figure class="">
+    <img src="media/Clipboard 6.png" class=" size-contain position-center-center" />
+   </figure>
+   <figure class="">
+    <img src="media/Clipboard 7.png" class=" size-contain position-center-center" />
+   </figure>
+   <figure class="">
+    <img src="media/Clipboard 5.png" class=" size-contain position-center-center" />
+   </figure>
+  </div>  
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/946E302D-D119-451B-ACDD-DCEBBDBAABC7_1_105_c.jpeg" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/5EF6BEB4-B260-4F26-BE4E-B61585813762_1_105_c.jpeg" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 4.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p><strong>Everything can be a switch</strong></p> 
+  <p>Can you make a novel switch or button? </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light grid-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 media-grid"> 
+ <div class="element-group has-media">
+  <p>Exercise: Make it your own. </p> 
+  <p>Make a paper circuit of your own design!</p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/CB796786-EB7D-49E8-8898-DCD9157FCC0B_1_105_c.jpeg" class=" size-contain position-center-center" />
+   </figure>
+  </div> 
+  <p><a href="https://vimeo.com/29026837?fl=pl&amp;fe=sh">Everything can be a button.</a></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Share what you made!</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="thisworkswithourboardstoo">This works with our boards too!</h1> 
+  <p>We can extend our microcontroller/board with circuit parts of our own. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>First, let's load this onto our board</p> 
+  <pre><code>import digitalio
+import board 
+import time 
+
+led = digitalio.DigitalInOut(board.D13)
+led.switch_to_output()
+
+button = digitalio.DigitalInOut(board.A1)
+button.switch_to_input(pull=digitalio.Pull.DOWN)
+
+while True:
+    if button.value:  # button is pushed
+        led.value = True
+    else: 
+        led.value = False
+    
+    time.sleep(0.01)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light title-image-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-title-image slide-contents media-grid"> 
+ <div class="element-group">
+  <p>Connect one alligator cable to A1, and the other to 3.3v. This is ... a switch? </p>
+ </div> 
+ <figure class="">
+  <img src="media/IMG_4419.jpeg" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>A sidebar on <code>Pull.UP</code> and <code>Pull.DOWN</code> ...</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <p>Pull-down</p> 
+  <p>Pulling down the pin means your default value is LOW, or 0. </p> 
+  <p>When you pull a pin DOWN, the other side of the button has to be attached to 3.3V (a positive terminal) to be <strong>evergized</strong> when the button connects. </p> 
+  <p>When the button is pushed, the value goes <strong>high</strong>.</p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Screenshot 2026-04-21 at 3.56.06 PM.png" class=" size-contain position-center-center" />
+   </figure>
+  </div>
+ </div> 
+ <div class="element-group has-media has-media-last">
+  <p>Pull-up</p> 
+  <p>Pulling up the pin means your default value is HIGH, or 1. </p> 
+  <p>When you pull a pin UP, the other side of the button has to be attached to GND (a negative terminal) to be <strong>grounded</strong> when the button connects.</p> 
+  <p>When the button is pushed, the value goes <strong>low</strong>.</p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Screenshot 2026-04-21 at 3.56.50 PM.png" class=" size-contain position-center-center" />
+   </figure>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Try swapping <code>Pull.DOWN</code> to <code>Pull.UP</code>. What do you need to change to get the LED to turn on when the button is pushed? </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Ok, go ahead and switch back to <code>Pull.DOWN</code>!</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Let's swap those alligator cables for something with a sturdier connection. </p> 
+  <p><a href="https://learn.sparkfun.com/tutorials/working-with-wire/how-to-strip-a-wire">how to strip wires - reference</a></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 8.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents media-grid"> 
+ <div class="element-group has-media has-media-first">
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/IMG_4421 Large.jpeg" class=" position-center-center" />
+   </figure>
+  </div> 
+  <p>We'll use M3 bolts &amp; nuts to secure these wires. </p> 
+  <p>Once you replace the alligator cables with these, test them out by touching them them together. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>A switch or button can be anything that connects two parts of a conductive circuit. </p> 
+  <p>So, let's get creative with this! </p> 
+  <p><a href="https://www.youtube.com/watch?v=ZQ-dON4Fnts&amp;themeRefresh=1">Get Back To Work</a></p> 
+  <p><a href="https://www.youtube.com/watch?v=AI-6wMlaVTc">Electronic Popables by Jie Qi</a></p> 
+  <p><a href="https://www.youtube.com/watch?v=zRbQvEefhXc&amp;t=90s">Kandenko "Future with Bright Lights</a></p> 
+  <p><a href="https://www.youtube.com/watch?v=DEUMG4z7JgY">Kandenko "Connecting Thoughts"</a></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p><strong>Make a novel button and hook it up to your board.</strong></p> 
+  <p>Can you make its form relate to its functionality? Can you make it functional, dysfunctional, or otherwise odd?</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="andnowforsomethingmoreofficial">And now for something more "official"</h1> 
+  <p>Let's attach an arcade button.</p> 
+  <p><a href="https://www.adafruit.com/product/3491">Adafruit arcade button</a></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 9.png" class=" position-center-center" />
+ </figure> 
+ <div class="element-group has-media">
+  <p>On an arcade button, you'll see 4 terminals at the bottom. On these buttons, the 2 attached to the gray square are the terminals connected to the actual button. </p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/button_connectors.jpeg" class=" position-center-center" />
+   </figure>
+  </div> 
+  <p>Connect one alligator clip to each of these terminals. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group">
+  <p>Using the same code this should work!</p> 
+  <p>Attach:</p> 
+  <p>One terminal → A1</p> 
+  <p>Other terminal → 3.3V</p>
+ </div> 
+ <figure class="">
+  <img src="media/Screenshot 2026-04-21 at 4.13.36 PM.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>How could we make this more permanent? </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light title-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-title slide-contents"> 
+ <div class="element-group">
+  <h2 id="weregoingtoreplaceouralligatorclipswithsolderedwires.">We're going to replace our alligator clips with soldered wires.</h2> 
+  <p><strong>Solder Demo Time</strong></p> 
+  <p><a href="https://youtu.be/rK38rpUy568?si=EQ6mtdaH20fp7NYJ">ifixit how to solder video</a> </p> 
+  <p><a href="https://www.youtube.com/watch?v=NSqPHQ1zQco&amp;t">simple wire-to-wire soldering</a></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>First, prep your wires.</p> 
+  <p>You'll need a pair of wire strippers, and 2 wires of different colors. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <p>Soldering your two wires to these two connections: </p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/button_connectors.jpeg" class=" position-center-center" />
+   </figure>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/IMG_4431 Medium.jpeg" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light full-image-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-full-image slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/IMG_4432 Medium.jpeg" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light title-image-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-title-image slide-contents media-grid"> 
+ <div class="element-group">
+  <p>Now, connect these to A1 and 3.3V using M3 bolts. </p> 
+  <p>Running the same code, the button should work! </p>
+ </div> 
+ <figure class="">
+  <img src="media/Screenshot 2026-04-21 at 4.13.36 PM.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents media-grid"> 
+ <div class="element-group has-media has-media-first">
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/led_connectors.jpeg" class=" position-center-center" />
+   </figure>
+  </div> 
+  <p>What are these other pads?</p> 
+  <p>These buttons have LEDs built-into them so that they can light up when you want them to. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Let's do the same thing: cut some wires, solder them to these terminals.</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light grid-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <p>Attach the following using M3 screws</p> 
+  <p><strong>+</strong> → A2</p> 
+  <p><strong>-</strong> → GND</p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Screenshot 2026-04-21 at 4.19.30 PM.png" class=" size-contain position-center-center" />
+   </figure>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>import time
+import board
+import digitalio
+
+BUTTON_PIN = board.A1
+LED_PIN = board.A2
+
+button = digitalio.DigitalInOut(BUTTON_PIN)
+button.switch_to_input(pull=digitalio.Pull.DOWN)
+
+led = digitalio.DigitalInOut(LED_PIN)
+led.switch_to_output(value=False)
+
+while True:
+    pressed = button.value
+    led.value = pressed
+    time.sleep(0.1)  
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <ol> 
+   <li><p>Can you make this button turn the light on with a push, and off again with a push?</p></li> 
+   <li><p>Go back to some code from last week, and use this button to control the neopixels. </p></li> 
+  </ol>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+</div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/pptxgen.min.js"></script>
+<script src="engine/pfill.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>
