@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<style>
+:root{
+--logo: ;
+--logo-size: ;
+--text-scale-intensity: ;
+--darkaccent1color: #FFC400;
+--lightaccent1color: #FFC400;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #ffca00;
+--darktitletextcolor: #000;
+--lightbodytextcolor: #FFF;
+--darkbodytextcolor: #000;
+--lightbackgroundcolor: #ffffff;
+--darkbackgroundcolor: #000000;
+--bodyfont: ibm plex sans;
+--titlefont: ibm plex mono;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/newyork.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+<link rel="stylesheet" href="engine/billboard.min.css">
+</head>
+<body class="responsive  ">
+<div class="reveal">
+<div class="slides">
+<section class="variable-size-headings has-footer light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="hardwareweek2:beyondtheboard">Hardware Week 2: Beyond the Board</h1> 
+  <p>Hardware Controllers</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Questions from last class? </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p><mark>Warmup: Get the lyrics from your favorite song. Program your board such that every time you press a button, it prints out the next line of the song.</mark> </p> 
+  <p>While you do that, ask yourself: <strong>When your board prints, where does it go?</strong> </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="movingtheboard">Moving the Board</h1> 
+  <p>Acceleration</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light grid-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 has-only-media media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 10.png" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>import time
+
+from adafruit_circuitplayground import cp
+
+while True:
+    x, y, z = cp.acceleration
+    print((x, y, z))
+
+    time.sleep(0.1)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light grid-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 has-only-media media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 13.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Try setting your board flat on the table. Which axis has the highest number?</p> 
+  <p>What happens if you flip the board over? </p> 
+  <p>What if you hold it upright?</p> 
+  <p>What if you shake it? </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Ideate: What can you do with this? </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>The CircuitPlayground has some built-in utilities that use the accelerometer. </p> 
+  <p>You an detect shakes: </p> 
+  <pre><code>from adafruit_circuitplayground import cp
+
+while True:
+    if cp.shake():
+        print("Shake detected!")
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Or taps! </p> 
+  <pre><code>import time
+
+from adafruit_circuitplayground import cp
+
+cp.detect_taps = 2
+
+while True:
+    if cp.tapped:
+        print("Tapped!")
+    time.sleep(0.05)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Use moving the board as an input! You can use the raw accelerometer values, taps, or shakes. </p> 
+  <p>Challenges: </p> 
+  <ul> 
+   <li>Make your board do something different based on which axis is experiencing the most force.</li> 
+   <li>Use all three axis inputs at once. (Think ... what else has 3 values?)</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="sowhatisserial">So what is Serial?</h1>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>We already can get our boards talking ... </p> 
+  <p><code>print("Hello!")</code></p> 
+  <p>Without even knowing it, we're already using Serial. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>import time
+
+while True:
+    print("hi there")
+    time.sleep(1)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>So what is serial? </p> 
+  <p><strong>Serial is a way of connecting 2 devices across one communication channel.</strong></p> 
+  <p>Serial communication talks one bit at a time, sending information in a single channel. </p> 
+  <p><a href="https://youtu.be/cLUD_NGE370?si=VzmSu8H5L7TQSqcQ&amp;t=223">sending information by wire</a></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light grid-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 media-grid"> 
+ <div class="element-group has-media">
+  <p>This is how serial communications are hooked up. Each device has an RX (Receive), TX (Transfer), and a shared GND.</p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Clipboard 9.png" class=" size-contain position-center-center" />
+   </figure>
+  </div> 
+  <p>Note that they're relative to the DEVICE. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footnotes has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Let's connect to our serial channel another way. </p> 
+  <p>Open your <code>terminal</code><br /> Mac/Linux: <code>ls -1 /dev/cu.*</code> <sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup><sup><a href="#fn2" id="fnr2" title="see footnote" class="footnote">2</a></sup></p>
+ </div> 
+</div> 
+<div class="footnotes"> 
+ <ol> 
+  <li id="fn1"> <p>for Linux, you might need to try <code>ls -1 /dev/tty*</code> <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p> </li> 
+  <li id="fn2"> <p>If you're on Windows hold tight! <a href="#fnr2" title="return to article" class="reversefootnote">↩︎</a></p> </li> 
+ </ol> 
+</div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light grid-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 media-grid"> 
+ <div class="element-group has-media">
+  <p>You should see something like this: </p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Screenshot 2026-04-23 at 12.14.58 AM.png" class=" size-contain position-center-center" />
+   </figure>
+  </div> 
+  <p>These are called COM Ports/Serial Ports - each is a different device.</p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footnotes has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Find the COM port that's connected to your board. It'll likely look like <code>usbmodemXXXX</code>. </p> 
+  <p>Then, run <code>cat /dev/cu.usbmodem1101</code> <sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></p>
+ </div> 
+</div> 
+<div class="footnotes"> 
+ <ol> 
+  <li id="fn1"> <p>replace my usbModem number with your own <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p> </li> 
+ </ol> 
+</div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footnotes has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Another way to listen to our serial channel: </p> 
+  <p><a href="https://www.serialterminal.com/">SerialTerminal.com</a><sup><a href="#fn1" id="fnr1" title="see footnote" class="footnote">1</a></sup></p>
+ </div> 
+</div> 
+<div class="footnotes"> 
+ <ol> 
+  <li id="fn1"> <p>Use this in Chrome! Potentially not supported in other browsers. <a href="#fnr1" title="return to article" class="reversefootnote">↩︎</a></p> </li> 
+ </ol> 
+</div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>An important note: <strong>only one device/app/listener can connect to serial at a time</strong>. </p> 
+  <p>If you're not able to connect on serialterminal.com, check that you've closed your serial and plotter on Mu. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Bonus: your board can technically listen to your computer too. </p> 
+  <pre><code>import supervisor
+import sys
+
+while True:
+    if supervisor.runtime.serial_bytes_available:
+        msg = sys.stdin.readline().strip()
+        print("got:", msg)
+</code></pre> 
+  <p>*This is not well supported in CircuitPython ... but technically possible. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="nowletstalktoeverythingelse">Now let's talk to everything else</h1> 
+  <p>Let's get your board to talk to P5. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <pre><code>import time
+from adafruit_circuitplayground import cp
+ 
+while True:
+    x, y, z = cp.acceleration
+    print(f"{x:.2f},{y:.2f},{z:.2f}")
+    time.sleep(0.05)
+</code></pre>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p><a href="https://editor.p5js.org/lschang/full/tlKyJwEp9">P5 Sketch</a></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>WebSerial is an API that lets websites connect directly to your serial devices. </p> 
+  <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API">MDN Web Serial API documentation</a></p> 
+  <p><a href="https://github.com/yoonbuck/p5.WebSerial/wiki/API#options">P5.WebSerial Documentation</a></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Structuring Data </p> 
+  <p><code>(-3.44742, -1.37897, 9.11651)</code> </p> 
+  <p>vs</p> 
+  <p><code>-3.44742, -1.37897, 9.11651</code></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Use another input on your board to talk to a P5 sketch. </p> 
+  <p>Challenges: </p> 
+  <ul> 
+   <li>Send more than one input at a time. Use them to control different things.</li> 
+   <li>Can you your accelerometer control your neopixels and your P5 sketch at the same time?</li> 
+  </ul>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="beyondabareboard">Beyond a Bare Board</h1> 
+  <p>Let's give our boards some flair </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <p>Building a body protects your electronics, but also tells people how to use them. </p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/thesis-tests-2.jpg" class=" position-center-center" />
+   </figure>
+  </div>
+ </div> 
+ <figure class="">
+  <img src="media/IMG_9816.jpeg" class=" position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light grid-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <p>Our circuit boards are nice, but they could be so much more. </p> 
+  <p>Giving them a body can change how we interact with them. You might interact with these two differently. </p> 
+  <div class="layout-grid media-grid grid-items-2">
+   <figure class="">
+    <img src="media/Clipboard 14.png" class=" size-contain position-center-center" />
+   </figure>
+   <figure class="">
+    <img src="media/Clipboard 16.png" class=" size-contain position-center-center" />
+   </figure>
+  </div> 
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/IMG_5622.jpeg" class=" position-center-center" />
+ </figure> 
+ <div class="element-group has-media has-media-first">
+  <div class="html-videoWrapper">
+   <video controls class=" position-center-center">
+    <source src="iapresenter:///Users/leia.chang/Library/Containers/net.ia.presenter/Data/Library/Application Support/PRESENTER_TEMP/85137BDD-EE8A-4FD6-BFC1-62B77C2CF0D1-6845-000019EEC8062971/assets/IMG_5617.MOV" />
+   </video>
+  </div> 
+  <p>Using the light? Diffuse it for a nicer glow, or use its shape to tell a story. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light grid-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-grid {@{HAS_MEDIA_CLASSES}@} slide-contents grid-items-1 media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <p>Remember these screw terminals? You can also use them to anchor the board to a shell. </p> 
+  <p>However, DON'T use GND, 3.3V, or VOUT. </p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/IMG_4421 Large.jpeg" class=" position-center-center" />
+   </figure>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <figure class="">
+  <img src="media/Clipboard 17.png" class=" position-center-center" />
+ </figure> 
+ <div class="element-group has-media has-media-last">
+  <p>Want a wearable? You could also sew, or string the board to secure it. </p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Clipboard 18.png" class=" position-center-center" />
+   </figure>
+  </div>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light v-split-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-v-split slide-contents media-grid"> 
+ <div class="element-group has-media has-media-last">
+  <p>And you can make anything with cardboard.</p> 
+  <div class="single-image-wrapper">
+   <figure class="">
+    <img src="media/Clipboard 19.png" class=" size-contain position-center-center" />
+   </figure>
+  </div>
+ </div> 
+ <figure class="">
+  <img src="media/Clipboard 20.png" class=" size-contain position-center-center" />
+ </figure> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p><a href="https://youtu.be/MWrlqzsisnE?si=1wC7GH6WQQWMr3ho">musical glove</a></p> 
+  <p><a href="https://youtu.be/sCgfHm83ieI">grim grinning ghosts</a></p> 
+  <p><a href="https://learn.adafruit.com/case-for-circuit-playground/3d-printing">3D printed cases</a></p> 
+  <p><a href="https://learn.adafruit.com/snap-fit-mount-for-circuit-playground-express/3d-printing">Snap fit mount case</a></p> 
+  <p><a href="https://www.ponoko.com/blog/how-to-make/making-enclosures-for-electronics-with-ponoko/">General advice for electronics enclosures</a></p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light default-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-default slide-contents"> 
+ <div class="element-group">
+  <p>Imagine a housing, cover, or other body for your board.</p> 
+  <p>Make it out of cardboard, paper, cloth, tape, or other readily available materials. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+<section class="variable-size-headings has-footer light cover-container wide" style="">
+<div class="header">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing"></div>
+</div> 
+<div class="layout-cover slide-contents"> 
+ <div class="element-group">
+  <h1 id="saturdayproject">Saturday Project</h1> 
+  <p>Your challenge is to build a controller with your Circuit Playground that controls something on your computer (a P5 sketch, or something else!). You'll make a housing for your circuit, so bring any materials you'll need. </p>
+ </div> 
+</div> 
+<div class="footnotes"></div> 
+<div class="footer">
+ <div class="leading"></div>
+ <div class="middle"></div>
+ <div class="trailing">
+  GA CCI Hardware Week 2
+ </div>
+</div>
+</section>
+</div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/d3v4.min.js"></script>
+<script src="engine/billboard.min.js"></script>
+<script src="engine/infographics.js"></script>
+<script src="engine/highlight.min.js"></script>
+<script src="engine/katex/katex.min.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>
