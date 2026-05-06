@@ -1,0 +1,21 @@
+{
+  "Name": "New York",
+  "Version": "1.0.2",
+  "Author": "iA",
+  "ShortDescription": "Your city's a sucker...",
+  "LongDescription": "...my city's a freak.\n- Different sizes for headlines\n- Yellow and black\n- Black and yellow\n- Default font: Inter",
+  "Css": "newyork.css",
+  "TitleFont": "Inter",
+  "BodyFont": "Inter",
+  "CssClasses": "variable-size-headings",
+  "LayoutExamples":[
+   {
+        "Name": "Title with Background",
+        "Markdown": "/Theme/image2.webp\nBackground: true\nopacity: 20%\n\n# TITLE\n#### with background",
+   },
+   {
+        "Name": "Subtitle with Background",
+        "Markdown": "/Theme/image2.webp\nBackground: true\nopacity: 20%\n\n## SUBTITLE\n#### with background",
+   }
+]
+}
